@@ -1,0 +1,49 @@
+
+        /* Global CSS for the smooth scrolling behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #side-menu {
+            /* Desktop/Tablet: Fixed, 64 units wide (approx 256px) */
+            width: 256px;
+            /* Ensure it sits above all other content */
+            z-index: 50;
+        }
+
+        /* Styling for the Navigation Links */
+        /* NOTE: All links, including 'Give Now', use this shared style for uniformity */
+        .nav-link {
+            transition: color 0.2s, background-color 0.2s;
+            color: #374151; /* Default Dark Gray/Almost Black */
+        }
+        .nav-link:hover {
+            background-color: #F3F4F6; /* Light gray background on hover */
+            color: #51CEEA; /* Main Blue on hover */
+        }
+
+        /* Apply active state styling if needed */
+        .nav-link.active {
+            background-color: #F3F4F6;
+            color: #51CEEA;
+            font-weight: 600;
+        }
+
+        /* Styling for the Hero Section background image overlay */
+        .hero-bg-image {
+            /* Using a placeholder image URL */
+            background-image: url('https://placehold.co/1200x800/164E63/FFFFFF?text=Inspiring+Background+Image');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Utility for responsive YouTube embed */
+        .aspect-video {
+            aspect-ratio: 16 / 9;
+        }
+
+        /* Language-switching styles */
+        .lang-en .es, .lang-es .en {
+            display: none;
+        }
+    

@@ -1,0 +1,7 @@
+Options -Indexes
+
+AuthType Basic
+AuthName "Restricted Area"
+AuthUserFile /home/username/.htpasswd
+Require valid-user
+
