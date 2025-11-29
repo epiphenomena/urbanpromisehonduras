@@ -3,29 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPH Fixed Sidebar Prototype</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Set up Tailwind configuration -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    // Define the primary brand colors
-                    colors: {
-                        'uph-primary': '#164E63', // Deep Teal (For dark text/elements)
-                        'uph-main-blue': '#51CEEA', // Main Blue (Original accent/hovers)
-                        'uph-main-green': '#9cd639', // Main Green (New accent/highlight)
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <title>Urban Promise Honduras</title>
     <!-- Load the Inter font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-50 font-sans min-h-screen lang-en">
+<body class="lang-en">
+
+    <div class="site-container">
+        <!-- Mobile Header -->
+        <header class="mobile-header">
+            <a href="#top">
+                <img src="https://placehold.co/150x40/164E63/FFFFFF?text=UPH" alt="UPH Logo" class="logo-mobile">
+            </a>
+            <button class="hamburger-button" id="hamburger-button">
+                <svg class="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </header>

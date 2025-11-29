@@ -25,8 +25,8 @@ const translations = {
 const langEnBtn = document.getElementById('lang-en');
 const langEsBtn = document.getElementById('lang-es');
 const langToggleButtons = [langEnBtn, langEsBtn];
-const activeClass = ['font-bold', 'text-uph-main-green'];
-const inactiveClass = ['text-gray-500'];
+const activeClass = ['active']; // Updated class for active language button
+const inactiveClass = []; // No specific inactive class, just remove active
 
 // Function to update the language and highlight the active button
 function setLanguage(lang) {
@@ -51,10 +51,8 @@ function setLanguage(lang) {
         const isCurrent = button.id.includes(lang);
         if (isCurrent) {
             button.classList.add(...activeClass);
-            button.classList.remove(...inactiveClass);
         } else {
             button.classList.remove(...activeClass);
-            button.classList.add(...inactiveClass);
         }
     });
 }
@@ -75,25 +73,29 @@ function openModal(programKey) {
     }
 
     // Show the modal
-    modal.classList.remove('hidden');
-    modal.classList.add('flex');
+    modal.classList.remove('hidden'); // Assuming 'hidden' hides the modal via display: none;
+    modal.classList.add('flex'); // Assuming 'flex' shows the modal via display: flex;
 }
 
 
 // Function to close the program detail modal
 function closeModal(event) {
     // Close only if the click is on the background or the close button
-    if (event && event.target !== document.getElementById('program-modal')) {
-        return;
-    }
+    // Check if event is defined and target is not a child of modal-content, or if it's the close button itself
     const modal = document.getElementById('program-modal');
+    if (!modal) return;
+
+    if (event && event.target !== modal && !event.target.closest('.modal-content')) {
+        return; // Clicked outside the modal content but not on the modal backdrop itself, nor on a close button
+    }
+
     modal.classList.add('hidden');
     modal.classList.remove('flex');
 }
 
 // Newsletter Subscription Mockup handler
 document.addEventListener('submit', function(e) {
-    const newsletterForm = e.target.closest('#social-media form');
+    const newsletterForm = e.target.closest('.newsletter-form');
     if (newsletterForm) {
         e.preventDefault();
 
@@ -109,12 +111,14 @@ document.addEventListener('submit', function(e) {
         if (firstName && lastName && email && email.includes('@')) {
             // Simulate successful submission
             subscribeMessage.textContent = t.subscribe_success;
-            subscribeMessage.className = 'text-center text-sm font-semibold pt-2 text-uph-main-green block';
+            subscribeMessage.classList.remove('hidden', 'text-red-500'); // Assuming these were Tailwind
+            subscribeMessage.classList.add('text-uph-main-green'); // New class from vanilla CSS
             newsletterForm.reset();
         } else {
             // Simulate failure
             subscribeMessage.textContent = t.subscribe_error;
-            subscribeMessage.className = 'text-center text-sm font-semibold pt-2 text-red-500 block';
+            subscribeMessage.classList.remove('hidden', 'text-uph-main-green'); // Assuming these were Tailwind
+            subscribeMessage.classList.add('text-red-500'); // Use standard red for error
         }
 
         // Clear message after 5 seconds
@@ -126,9 +130,35 @@ document.addEventListener('submit', function(e) {
 });
 
 
-// Initialize the site language on load
+// Mobile Menu Functionality
 document.addEventListener('DOMContentLoaded', () => {
-    // Check for a saved language preference, otherwise default to 'en'
+    // Initialize the site language on load
     const savedLang = localStorage.getItem('language') || 'en';
     setLanguage(savedLang);
+
+    const hamburgerButton = document.getElementById('hamburger-button');
+    const mobileMenuCloseButton = document.getElementById('mobile-menu-close');
+    const sidebarNav = document.getElementById('side-menu');
+    const navLinks = sidebarNav ? sidebarNav.querySelectorAll('.nav-link') : [];
+
+    if (hamburgerButton && sidebarNav) {
+        hamburgerButton.addEventListener('click', () => {
+            sidebarNav.classList.add('is-open');
+        });
+    }
+
+    if (mobileMenuCloseButton && sidebarNav) {
+        mobileMenuCloseButton.addEventListener('click', () => {
+            sidebarNav.classList.remove('is-open');
+        });
+    }
+
+    // Close menu when a navigation link is clicked (for smooth scrolling)
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (sidebarNav && sidebarNav.classList.contains('is-open')) {
+                sidebarNav.classList.remove('is-open');
+            }
+        });
+    });
 });
