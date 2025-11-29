@@ -144,12 +144,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hamburgerButton && sidebarNav) {
         hamburgerButton.addEventListener('click', () => {
             sidebarNav.classList.add('is-open');
+            hamburgerButton.classList.add('is-hidden'); // Hide hamburger when menu opens
         });
     }
 
     if (mobileMenuCloseButton && sidebarNav) {
         mobileMenuCloseButton.addEventListener('click', () => {
             sidebarNav.classList.remove('is-open');
+            hamburgerButton.classList.remove('is-hidden'); // Show hamburger when menu closes
         });
     }
 
@@ -158,6 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => {
             if (sidebarNav && sidebarNav.classList.contains('is-open')) {
                 sidebarNav.classList.remove('is-open');
+                hamburgerButton.classList.remove('is-hidden'); // Show hamburger when menu closes
             }
         });
     });
