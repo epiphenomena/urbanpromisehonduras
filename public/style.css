@@ -8,13 +8,16 @@
 /* 1. Global Settings & Variables
 -------------------------------------------------- */
 
+* {
+    box-sizing: border-box; /* Ensure consistent box model */
+}
+
 :root {
     /* Colors */
     --color-primary: #164E63;       /* Deep Teal */
     --color-accent-blue: #51CEEA;   /* Main Blue */
     --color-accent-green: #9cd639;  /* Main Green */
     --color-text-dark: #374151;     /* Dark Gray */
-    --color-text-light: #f9fafb;    /* Light Gray */
     --color-background-light: #f9fafb; /* Light Gray Background */
     --color-background-medium: #F3F4F6; /* Medium Gray Background */
     --color-border: #e5e7eb;       /* Border Color */
@@ -88,8 +91,10 @@ a:hover {
 /* Mobile Header */
 .mobile-header {
     display: flex; /* Always flex for its content */
-    position: sticky;
+    position: fixed; /* Changed from sticky to fixed */
     top: 0;
+    left: 0; /* Ensure it starts from the left edge */
+    width: 100%; /* Ensure it's full width */
     background-color: white;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     padding: 1rem;
@@ -193,6 +198,7 @@ a:hover {
         background: none;
         border: none;
         cursor: pointer;
+        z-index: 101; /* Ensure it's on top of sidebar-nav */
     }
 
     .mobile-menu-close .close-icon {
@@ -203,6 +209,11 @@ a:hover {
 
     .hamburger-button.is-hidden { /* Hide hamburger when menu is open */
         display: none;
+    }
+    
+    /* Adjust main content for fixed header */
+    .main-content {
+        padding-top: 4rem; /* Adjust for fixed mobile header height */
     }
 }
 
@@ -262,6 +273,7 @@ a:hover {
 .lang-switcher {
     border-top: 1px solid var(--color-border);
     padding-top: 1.5rem;
+    margin-top: 0; /* Removed auto to prevent pushing off-screen */
 }
 
 .lang-switcher button {
@@ -682,7 +694,7 @@ a:hover {
     border-radius: 0.75rem;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     overflow: hidden;
-    border-top: 4px solid var(--color-accent-blue); /* Default accent */
+    border-top: 444px solid var(--color-accent-blue); /* Default accent */
 }
 
 .grid-item.accent-green {
