@@ -18,6 +18,7 @@
     --color-accent-blue: #51CEEA;   /* Main Blue */
     --color-accent-green: #9cd639;  /* Main Green */
     --color-text-dark: #374151;     /* Dark Gray */
+    --color-text-light: #f9fafb;
     --color-background-light: #f9fafb; /* Light Gray Background */
     --color-background-medium: #F3F4F6; /* Medium Gray Background */
     --color-border: #e5e7eb;       /* Border Color */
@@ -156,7 +157,6 @@ a:hover {
 
     .main-content {
         margin-left: var(--sidebar-width); /* Push content right */
-        padding-top: 2.5rem; /* Add padding-top for sections */
     }
 
     .mobile-menu-close { /* Ensure close button is hidden on desktop */
@@ -315,13 +315,14 @@ a:hover {
     flex-direction: column;
     /* Removed card-like styling here */
     padding: 0; /* Ensure no extra padding outside section-content-container */
-    margin-bottom: 2.5rem; /* Keep vertical spacing between sections */
+    color: var(--color-text-light)
 }
 
 @media (min-width: 1024px) {
     .hero-section-split {
         flex-direction: row;
         min-height: 85vh;
+        margin-left: var(--sidebar-width);
     }
 }
 
@@ -360,7 +361,7 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000;
+    background-color: #164E63;
     opacity: 0.6;
     z-index: 2;
 }
