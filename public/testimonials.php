@@ -1,3 +1,79 @@
+<style>
+/* Testimonials Section */
+.testimonials-section {
+    background-color: rgba(156, 214, 57, 0.1); /* Light green tint */
+    border-radius: 0.75rem;
+    padding: 2rem 1rem;
+}
+
+@media (min-width: 768px) {
+    .testimonials-section {
+        padding: 3rem;
+    }
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+    .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 1024px) {
+    .testimonial-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.testimonial-card {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 4px solid var(--color-accent-blue);
+}
+
+.testimonial-card.accent-green {
+    border-top-color: var(--color-accent-green);
+}
+.testimonial-card.accent-primary {
+    border-top-color: var(--color-primary);
+}
+
+
+.author-image {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+}
+
+.quote-text {
+    font-style: italic;
+    color: #4b5563; /* Gray-600 */
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.author-name {
+    font-weight: 600;
+    color: rgba(22, 78, 99, 0.7);
+    font-size: 0.875rem;
+}
+</style>
 <section class="content-section testimonials-section">
     <div class="section-content-container">
         <div class="section-header">

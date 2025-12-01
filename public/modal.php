@@ -1,3 +1,221 @@
+<style>
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    max-width: 70rem; /* Adjusted max-width for content */
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.is-open .modal-content {
+    transform: translateY(0);
+}
+
+.modal-inner {
+    padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .modal-inner {
+        padding: 2.5rem;
+    }
+}
+
+
+.modal-header {
+    display: flex;
+    justify-content: space-between; /* Add this back for modal header */
+    align-items: flex-start;
+
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 10;
+}
+
+.modal-title {
+    font-size: 1.875rem; /* 30px */
+    font-weight: 800;
+    color: var(--color-primary);
+    margin: 0;
+}
+
+.modal-close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    margin-top: -0.5rem;
+    margin-right: -0.5rem;
+    transition: color 0.2s;
+    color: #9ca3af; /* Gray-400 */
+}
+
+.modal-close-button:hover {
+    color: #4b5563; /* Gray-700 */
+}
+
+.modal-body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.modal-program-detail {
+    display: none; /* Hidden by default, shown by JS */
+}
+
+.program-image-container {
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    height: 16rem; /* 256px */
+    margin-bottom: 2rem;
+}
+
+.program-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.program-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+    .program-detail-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.program-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.program-section-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.program-subtitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.program-description {
+    color: #4b5563; /* Gray-700 */
+    line-height: 1.75;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+@media (min-width: 640px) {
+    .metrics-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.metric-item {
+    background-color: rgba(156, 214, 57, 0.1); /* Light green tint */
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.metric-number {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-accent-green);
+    margin: 0;
+}
+
+.metric-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-top: 0.25rem;
+}
+
+.program-support-button {
+    margin-top: 1.5rem;
+    align-self: center;
+    width: 100%;
+    max-width: 20rem;
+    background-color: var(--color-accent-green);
+    color: white;
+    font-weight: 800;
+}
+
+.program-support-button:hover {
+    background-color: var(--color-primary);
+}
+
+
+.program-testimonial {
+    background-color: rgba(22, 78, 99, 0.05); /* Light primary tint */
+    border-radius: 0.75rem;
+    border-left: 4px solid var(--color-accent-blue);
+    padding: 1.5rem;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+}
+
+.program-testimonial-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.program-testimonial-quote {
+    font-size: 1.125rem;
+    color: #374151; /* Dark Gray */
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.program-testimonial-author {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-accent-blue);
+    text-align: right;
+    margin-top: 1rem;
+}
+</style>
 <!-- Generic Modal Structure (hidden by default) -->
 <div id="program-modal" class="modal-overlay" onclick="closeModal(event)">
     <!-- Modal Content Box -->

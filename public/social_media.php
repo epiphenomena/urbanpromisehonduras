@@ -1,3 +1,129 @@
+<style>
+/* Social Media Section */
+.social-media-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+    .social-media-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.social-media-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.social-media-column--stacked {
+    gap: 2.5rem;
+}
+
+.video-container--bordered {
+    border: 4px solid var(--color-accent-green);
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.instagram-section {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+}
+
+.instagram-post {
+    display: block;
+    aspect-ratio: 1 / 1;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.instagram-post:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.instagram-post-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.instagram-link {
+    text-align: center;
+    font-size: 0.875rem;
+    margin-top: 1rem;
+}
+
+.instagram-link a {
+    font-weight: 600;
+    color: #6b7280; /* Gray-500 */
+}
+
+.instagram-link a:hover {
+    color: var(--color-accent-blue);
+}
+
+
+.newsletter-section {
+    background-color: rgba(22, 78, 99, 0.05);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (min-width: 640px) {
+    .form-row {
+        flex-direction: row;
+    }
+    .form-row .form-group {
+        flex: 1;
+    }
+}
+
+.button-green {
+    background-color: var(--color-accent-green);
+    color: white;
+}
+.button-green:hover {
+    background-color: var(--color-primary);
+}
+
+.subscribe-message {
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding-top: 0.5rem;
+    display: block; /* Ensure visibility */
+}
+</style>
 <section id="social-media" class="content-section">
     <div class="section-content-container">
         <div class="section-header sr-only">

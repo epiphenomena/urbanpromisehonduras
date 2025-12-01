@@ -1,3 +1,90 @@
+<style>
+/* Latin America Section */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.grid-item {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    overflow: hidden;
+    border-top: 4px solid var(--color-accent-blue); /* Default accent */
+}
+
+.grid-item.accent-green {
+    border-top-color: var(--color-accent-green);
+}
+.grid-item.accent-blue {
+    border-top-color: var(--color-accent-blue);
+}
+
+.map-image-container {
+    height: 16rem; /* 256px */
+    overflow: hidden;
+}
+
+.map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.map-caption {
+    padding: 1rem;
+    text-align: center;
+}
+
+.map-text {
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 0;
+}
+
+.video-card {
+    background-color: black; /* For video background */
+}
+
+.campus-update-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.campus-text {
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.campus-images {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.campus-image {
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-border);
+}
+</style>
 <section id="latin-america" class="content-section">
     <div class="section-content-container">
         <div class="section-header">

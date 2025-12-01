@@ -1,3 +1,38 @@
+<style>
+/* Footer */
+footer {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 2rem var(--content-padding);
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.footer-content {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+    }
+}
+
+.footer-social-links a {
+    color: white;
+    margin: 0 0.5rem;
+    text-decoration: underline;
+}
+
+.footer-social-links a:hover {
+    color: var(--color-accent-blue);
+}
+</style>
         <footer>
             <div class="footer-content">
                 <p>&copy; <?php echo date("Y"); ?> Urban Promise Honduras. All rights reserved.</p>

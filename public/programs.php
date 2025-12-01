@@ -1,3 +1,87 @@
+<style>
+/* Programs Section */
+.impact-stats {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.subsection-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+    .stats-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.stat-item {
+    background-color: rgba(22, 78, 99, 0.05);
+    padding: 1rem;
+    border-radius: 0.75rem;
+}
+
+.stat-number {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--color-accent-blue);
+    margin: 0;
+}
+
+.stat-label {
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-top: 0.25rem;
+}
+
+.program-section {
+    margin-top: 4rem;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .program-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.program-card {
+    background-color: white; /* Changed to solid white */
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1); /* Stronger shadow */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.program-card .card-title {
+    color: var(--color-primary);
+}
+
+.program-card .button {
+    margin-top: auto; /* Pushes button to the bottom */
+}
+</style>
 <section id="programs" class="content-section">
     <div class="section-content-container">
         <!-- 1. Mission Statement -->
