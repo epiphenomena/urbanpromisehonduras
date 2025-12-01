@@ -31,7 +31,7 @@ task :publish do
   # This is a stub - implement your deployment method here
   # Example: rsync, git push, FTP, etc.
   # You might want to add configuration for server details
-  puts 'Insert rsync command here'
+  sh *%w[rsync -avvzh --delete ./public/ dream:wp.urbanpromisehonduras.org/]
   puts 'Site published successfully!'
 end
 
