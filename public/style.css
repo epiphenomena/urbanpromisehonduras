@@ -23,7 +23,7 @@
     --color-border: #e5e7eb;       /* Border Color */
 
     /* Typography */
-    --font-primary: 'Inter', sans-serif;
+    --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
     /* Layout */
     --sidebar-width: 256px;
@@ -103,6 +103,7 @@ a:hover {
     z-index: 100;
     justify-content: space-between; /* Distribute logo and hamburger */
     align-items: center;
+    line-height: 0;
 }
 
 .hamburger-button {
@@ -140,7 +141,6 @@ a:hover {
 
 /* Main Content Area */
 .main-content {
-    /* No padding here, handled by section-content-container within sections */
     width: 100%;
 }
 
@@ -220,10 +220,10 @@ a:hover {
     .hamburger-button.is-hidden { /* Hide hamburger when menu is open */
         display: none;
     }
-    
+
     /* Remove main-content padding-top as it's now on body */
     .main-content {
-        padding-top: 0; 
+        padding-top: 0;
     }
 }
 
@@ -977,7 +977,7 @@ footer {
     display: flex;
     justify-content: space-between; /* Add this back for modal header */
     align-items: flex-start;
-    
+
     padding-bottom: 1rem;
     margin-bottom: 1.5rem;
     position: sticky;

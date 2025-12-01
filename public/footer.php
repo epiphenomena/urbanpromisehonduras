@@ -9,6 +9,6 @@
             </div>
         </footer>
     </div> <!-- Close .site-container -->
-    <script src="main.js"></script>
+    <script><?php echo file_get_contents('main.js'); ?></script>
 </body>
 </html>
