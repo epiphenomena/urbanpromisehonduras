@@ -3,14 +3,12 @@
 
 <!-- Main Content Wrapper -->
 <main class="main-content">
-    <div class="content-wrapper">
-        <?php include 'hero.php'; ?>
-        <?php include 'programs.php'; ?>
-        <?php include 'testimonials.php'; ?>
-        <?php include 'latin_america.php'; ?>
-        <?php include 'social_media.php'; ?>
-        <?php include 'about_us.php'; ?>
-    </div>
+    <?php include 'hero.php'; ?>
+    <?php include 'programs.php'; ?>
+    <?php include 'testimonials.php'; ?>
+    <?php include 'latin_america.php'; ?>
+    <?php include 'social_media.php'; ?>
+    <?php include 'about_us.php'; ?>
 </main>
 
 <?php include 'modal.php'; ?>

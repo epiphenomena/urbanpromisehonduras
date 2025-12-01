@@ -34,6 +34,8 @@
 /* Global behavior */
 html, body {
     height: 100%; /* Ensure full height for correct mobile sidebar behavior */
+    margin: 0; /* Explicitly set to 0 */
+    padding: 0; /* Explicitly set to 0 */
 }
 
 html {
@@ -45,7 +47,6 @@ body {
     font-family: var(--font-primary);
     background-color: var(--color-background-light);
     color: var(--color-text-dark);
-    margin: 0;
     line-height: 1.6;
 }
 
@@ -91,10 +92,11 @@ a:hover {
 /* Mobile Header */
 .mobile-header {
     display: flex; /* Always flex for its content */
-    position: fixed; /* Changed from sticky to fixed */
+    position: fixed;
     top: 0;
-    left: 0; /* Ensure it starts from the left edge */
-    width: 100%; /* Ensure it's full width */
+    left: 0;
+    width: 100%;
+    height: 4rem; /* Explicit height to prevent shrinking */
     background-color: white;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     padding: 1rem;
@@ -127,7 +129,7 @@ a:hover {
     top: 0;
     left: 0;
     width: var(--sidebar-width);
-    min-height: 100vh; /* Changed from height:100vh to min-height for better flow */
+    min-height: 100vh;
     background-color: white;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     padding: 1.5rem;
@@ -138,7 +140,7 @@ a:hover {
 
 /* Main Content Area */
 .main-content {
-    padding: var(--content-padding);
+    /* No padding here, handled by section-content-container within sections */
     width: 100%;
 }
 
@@ -154,7 +156,7 @@ a:hover {
 
     .main-content {
         margin-left: var(--sidebar-width); /* Push content right */
-        padding: 2.5rem;
+        padding-top: 2.5rem; /* Add padding-top for sections */
     }
 
     .mobile-menu-close { /* Ensure close button is hidden on desktop */
@@ -162,14 +164,22 @@ a:hover {
     }
 }
 
-.content-wrapper {
+/* .content-wrapper is removed from global scope to allow full-width sections */
+
+.section-content-container {
     max-width: var(--content-max-width);
     margin: 0 auto;
+    padding: 0 var(--content-padding);
 }
 
 
 /* Mobile Menu Specifics */
 @media (max-width: 767px) {
+    /* Apply padding-top to body for fixed mobile header */
+    body {
+        padding-top: 4rem; /* Match mobile header height */
+    }
+
     .sidebar-nav {
         position: fixed;
         top: 0;
@@ -211,9 +221,9 @@ a:hover {
         display: none;
     }
     
-    /* Adjust main content for fixed header */
+    /* Remove main-content padding-top as it's now on body */
     .main-content {
-        padding-top: 4rem; /* Adjust for fixed mobile header height */
+        padding-top: 0; 
     }
 }
 
@@ -303,11 +313,9 @@ a:hover {
 .hero-section-split {
     display: flex;
     flex-direction: column;
-    background-color: white;
-    border-radius: 0.75rem;
-    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-    overflow: hidden;
-    margin-bottom: 2.5rem;
+    /* Removed card-like styling here */
+    padding: 0; /* Ensure no extra padding outside section-content-container */
+    margin-bottom: 2.5rem; /* Keep vertical spacing between sections */
 }
 
 @media (min-width: 1024px) {
@@ -421,6 +429,7 @@ a:hover {
 .donation-form-container {
     width: 100%;
     max-width: 24rem;
+    padding-top: 0; /* Remove padding-top from here */
 }
 
 .form-title {
@@ -567,7 +576,9 @@ a:hover {
 }
 
 .program-grid {
+    display: grid;
     grid-template-columns: 1fr;
+    gap: 1.5rem;
     max-width: 48rem;
     margin: 0 auto;
 }
@@ -579,10 +590,10 @@ a:hover {
 }
 
 .program-card {
-    background-color: rgba(81, 206, 234, 0.1);
+    background-color: white; /* Changed to solid white */
     padding: 1.5rem;
     border-radius: 0.75rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1); /* Stronger shadow */
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -789,8 +800,8 @@ a:hover {
 .video-container--bordered {
     border: 4px solid var(--color-accent-green);
     border-radius: 0.75rem;
-    overflow: hidden;
     box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
 }
 
 .instagram-section {
@@ -966,7 +977,7 @@ footer {
     display: flex;
     justify-content: space-between; /* Add this back for modal header */
     align-items: flex-start;
-    border-bottom: 1px solid var(--color-border);
+    
     padding-bottom: 1rem;
     margin-bottom: 1.5rem;
     position: sticky;
@@ -1137,4 +1148,9 @@ footer {
     color: var(--color-accent-blue);
     text-align: right;
     margin-top: 1rem;
+}
+.section-content-container {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 0 var(--content-padding);
 }
