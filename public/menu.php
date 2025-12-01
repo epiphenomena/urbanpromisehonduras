@@ -12,12 +12,8 @@
         <!-- Logo Placeholder Image -->
         <div class="sidebar-logo">
             <a href="#top">
-                <img src="https://placehold.co/180x50/164E63/FFFFFF?text=UPH+Logo"
-                     alt="UPH Logo Placeholder"
-                     class="en">
-                <img src="https://placehold.co/180x50/164E63/FFFFFF?text=Logotipo+UPH"
-                     alt="Logotipo de UPH"
-                     class="es">
+                <img src="/media/logo.png"
+                     alt="UPH Logo. Logotipo de UPH.">
             </a>
         </div>
 

@@ -12,7 +12,7 @@
         <!-- Mobile Header -->
         <header class="mobile-header">
             <a href="#top">
-                <img src="https://placehold.co/150x40/164E63/FFFFFF?text=UPH" alt="UPH Logo" class="logo-mobile">
+                <img src="/media/logo.png" alt="UPH Logo" class="logo-mobile">
             </a>
             <button class="hamburger-button" id="hamburger-button">
                 <svg class="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
