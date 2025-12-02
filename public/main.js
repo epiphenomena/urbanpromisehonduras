@@ -157,6 +157,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Handle clicks on program buttons to open modals
+    document.querySelectorAll('button[data-program-key]').forEach(button => {
+        button.addEventListener('click', (event) => {
+            const programKey = event.currentTarget.dataset.programKey;
+            openModal(programKey);
+        });
+    });
+
     // Close menu when a navigation link is clicked (for smooth scrolling)
     navLinks.forEach(link => {
         link.addEventListener('click', () => {

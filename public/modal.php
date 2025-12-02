@@ -336,7 +336,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- UPCEL Program Content -->
                 <div id="modal-content-upcel" class="modal-program-detail">
                     <div class="program-image-container">
@@ -370,4 +370,4 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div></div>

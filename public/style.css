@@ -92,7 +92,6 @@ a:hover {
 
 /* Main Content Area */
 .main-content {
-    width: 100%;
     flex-grow: 1;
 }
 
@@ -209,7 +208,8 @@ a:hover {
 .section-split {
     display: flex;
     flex-direction: column;
-    padding: 4rem 0;
+    padding: 4rem var(--content-padding); /* Apply padding on mobile */
+    margin: 0 auto; /* Center the block */
 }
 
 .section-split-content {
