@@ -105,12 +105,12 @@
             <!-- Grid Item 2 (Top-Right): YouTube Video Embed -->
             <div class="grid-item card video-card accent-blue">
                 <div class="video-container">
-                    <!-- <iframe src="https://www.youtube.com/embed/OK68If0WFMU"
+                    <iframe src="https://www.youtube.com/embed/OK68If0WFMU"
                             title="YouTube video player"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
-                    </iframe> --><p>youtube</p>
+                    </iframe>
                 </div>
             </div>
 

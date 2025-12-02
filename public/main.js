@@ -136,6 +136,13 @@ document.addEventListener('submit', function(e) {
 
 // Mobile Menu Functionality
 document.addEventListener('DOMContentLoaded', () => {
+    langToggleButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            const lang = event.currentTarget.id.includes('en') ? 'en' : 'es';
+            setLanguage(lang);
+        });
+    });
+
     // Initialize the site language on load
     const savedLang = localStorage.getItem('language') || 'en';
     setLanguage(savedLang);
@@ -166,7 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const programKey = event.currentTarget.dataset.programKey;
             openModal(programKey);
         });
-        console.log("added open modal handler to:", button);
     });
 
     // Handle closing modal when close button is clicked
