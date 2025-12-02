@@ -49,6 +49,6 @@
     </section>
 </main>
 
-<?php include '../modal.php'; ?>
+
 <?php include '../footer.php'; ?>
 <?php include '../layout_bottom.php'; ?>
