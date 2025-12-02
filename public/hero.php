@@ -104,58 +104,7 @@
     background-color: rgba(249, 250, 251, 0.8);
 }
 
-#hero .donation-form-container {
-    width: 100%;
-    max-width: 24rem;
-    padding-top: 0;
-}
 
-#hero .form-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-#hero .donation-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-#hero .amount-selector {
-    display: flex;
-    gap: 0.5rem;
-}
-
-#hero .amount-button {
-    flex: 1;
-    background-color: rgba(22, 78, 99, 0.1);
-    color: var(--color-primary);
-    font-weight: 600;
-}
-#hero .amount-button:hover {
-    background-color: rgba(81, 206, 234, 0.2);
-}
-#hero .amount-button.active {
-    background-color: var(--color-accent-green);
-    color: white;
-}
-
-#hero .form-note {
-    font-size: 0.75rem;
-    text-align: center;
-    color: #6b7280;
-    margin-top: 0.5rem;
-}
-
-#hero .form-footer-note {
-    font-size: 0.875rem;
-    color: #6b7280;
-    text-align: center;
-    margin-top: 1.5rem;
-}
 </style>
 <section id="hero" class="section-split">
     <!-- Left Column: Quote and Story -->
@@ -185,37 +134,25 @@
     <!-- Right Column: Simple Giving Form -->
     <div class="section-split-content hero-content-right">
         <div class="section-content-container">
-            <div class="donation-form-container">
+            <div class="call-to-action-container">
                 <h3 class="form-title">
-                    <span class="en">Transform a life today.</span><span class="es">Transforma una vida hoy.</span>
+                    <span class="en">Support our work</span><span class="es">Apoya nuestro trabajo</span>
                 </h3>
-                <form class="donation-form">
-                    <div class="amount-selector">
-                        <button type="button" class="button amount-button">$25</button>
-                        <button type="button" class="button amount-button">$50</button>
-                        <button type="button" class="button amount-button active">$100</button>
-                    </div>
-                    <div class="form-group">
-                        <label for="donor-name" class="sr-only"><span class="en">Full Name</span><span class="es">Nombre Completo</span></label>
-                        <input type="text" id="donor-name" class="input-field" data-i18n-placeholder="form_name_placeholder">
-                    </div>
-                    <div class="form-group">
-                        <label for="donor-address" class="sr-only"><span class="en">Address</span><span class="es">Dirección</span></label>
-                        <input type="text" id="donor-address" class="input-field" data-i18n-placeholder="form_address_placeholder">
-                    </div>
-                    <div class="form-group">
-                        <label for="donor-card" class="sr-only"><span class="en">Credit Card</span><span class="es">Tarjeta de Crédito</span></label>
-                        <input type="text" id="donor-card" class="input-field" data-i18n-placeholder="form_card_placeholder">
-                        <p class="form-note">
-                            <span class="en">Secure transaction through SSL encryption.</span><span class="es">Transacción segura mediante cifrado SSL.</span>
-                        </p>
-                    </div>
-                    <button type="submit" class="button button-primary button-large">
-                        <span class="en">Complete Donation</span><span class="es">Completar Donación</span>
-                    </button>
-                </form>
+                <div class="button-group">
+                    <a href="#" class="button button-primary button-large">
+                        <span class="en">Give Today</span><span class="es">Donar Hoy</span>
+                    </a>
+                    <a href="#" class="button button-secondary button-large">
+                        <span class="en">Give Monthly (Join the Circus)</span><span class="es">Donar Mensual (Únete al Circo)</span>
+                    </a>
+                    <a href="#" class="button button-primary button-large">
+                        <span class="en">Give through PayPal</span><span class="es">Donar con PayPal</span>
+                    </a>
+                </div>
                 <p class="form-footer-note">
-                    <span class="en">Your donation directly supports our programs in Latin America.</span><span class="es">Tu donación apoya directamente nuestros programas en Latinoamérica.</span>
+                    <a href="#">
+                        <span class="en">Additional giving information and options</span><span class="es">Información y opciones adicionales para donar</span>
+                    </a>
                 </p>
             </div>
         </div>

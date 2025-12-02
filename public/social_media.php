@@ -1,18 +1,6 @@
 <style>
 /* Social Media Section */
-#social-media .social-media-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    max-width: var(--content-max-width);
-    margin: 0 auto;
-}
 
-@media (min-width: 1024px) {
-    #social-media .social-media-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
 #social-media .social-media-column {
     display: flex;
@@ -20,9 +8,6 @@
     gap: 2.5rem;
 }
 
-#social-media .social-media-column--stacked {
-    gap: 2.5rem;
-}
 
 #social-media .video-container--bordered {
     border: 4px solid var(--color-accent-green);
@@ -119,16 +104,15 @@
     display: block; /* Ensure visibility */
 }
 </style>
-<section id="social-media" class="content-section">
-    <div class="section-content-container">
-        <div class="section-header sr-only">
-            <h2 class="section-title">
-                <span class="en">Social Media</span><span class="es">Redes Sociales</span>
-            </h2>
-        </div>
-
-        <div class="social-media-grid">
-            <!-- Column 1: Impact Video -->
+<section id="social-media" class="section-split">
+    <!-- Left Column: Impact Video -->
+    <div class="section-split-content">
+        <div class="section-content-container">
+            <div class="section-header sr-only">
+                <h2 class="section-title">
+                    <span class="en">Social Media</span><span class="es">Redes Sociales</span>
+                </h2>
+            </div>
             <div class="social-media-column">
                 <h3 class="subsection-title">
                     <span class="en">UPLAM Impact Video</span><span class="es">Video de Impacto UPLAM</span>
@@ -142,9 +126,39 @@
                     </iframe> --><p>youtube</p>
                 </div>
             </div>
+            <!-- Row 2: Newsletter Form -->
+            <div class="newsletter-section card">
+                <h3 class="subsection-title">
+                    <span class="en">Subscribe to Our Newsletter</span><span class="es">Suscríbete a Nuestro Boletín</span>
+                </h3>
+                <form class="newsletter-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="newsletter-first-name" class="sr-only">First Name</label>
+                            <input type="text" id="newsletter-first-name" class="input-field" data-i18n-placeholder="form_first_name_placeholder" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newsletter-last-name" class="sr-only">Last Name</label>
+                            <input type="text" id="newsletter-last-name" class="input-field" data-i18n-placeholder="form_last_name_placeholder" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="newsletter-email" class="sr-only">Email Address</label>
+                        <input type="email" id="newsletter-email" class="input-field" data-i18n-placeholder="form_email_placeholder" required>
+                    </div>
+                    <a href="#" class="button button-green">
+                        <span class="en">Subscribe</span><span class="es">Suscribirse</span>
+                    </a>
+                    <div id="subscribe-message" class="subscribe-message" aria-live="polite"></div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-            <!-- Column 2: Instagram Grid and Newsletter Form (Stacked) -->
-            <div class="social-media-column social-media-column--stacked">
+    <!-- Right Column: Instagram Grid and Newsletter Form (Stacked) -->
+    <div class="section-split-content">
+        <div class="section-content-container">
+            <div class="social-media-column">
                 <!-- Row 1: Instagram Grid Placeholder -->
                 <div class="instagram-section card">
                     <h3 class="subsection-title">
@@ -176,32 +190,7 @@
                     </p>
                 </div>
 
-                <!-- Row 2: Newsletter Form -->
-                <div class="newsletter-section card">
-                    <h3 class="subsection-title">
-                        <span class="en">Subscribe to Our Newsletter</span><span class="es">Suscríbete a Nuestro Boletín</span>
-                    </h3>
-                    <form class="newsletter-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="newsletter-first-name" class="sr-only">First Name</label>
-                                <input type="text" id="newsletter-first-name" class="input-field" data-i18n-placeholder="form_first_name_placeholder" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="newsletter-last-name" class="sr-only">Last Name</label>
-                                <input type="text" id="newsletter-last-name" class="input-field" data-i18n-placeholder="form_last_name_placeholder" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="newsletter-email" class="sr-only">Email Address</label>
-                            <input type="email" id="newsletter-email" class="input-field" data-i18n-placeholder="form_email_placeholder" required>
-                        </div>
-                        <button type="submit" class="button button-green">
-                            <span class="en">Subscribe</span><span class="es">Suscribirse</span>
-                        </button>
-                        <div id="subscribe-message" class="subscribe-message" aria-live="polite"></div>
-                    </form>
-                </div>
+
             </div>
         </div>
     </div>
