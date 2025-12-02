@@ -60,7 +60,7 @@ function setLanguage(lang) {
 // Function to open the program detail modal
 function openModal(programKey) {
     const modal = document.getElementById('program-modal');
-    
+
     // Hide all program detail sections
     document.querySelectorAll('.modal-program-detail').forEach(panel => { // Changed class name
         panel.style.display = 'none';
@@ -73,7 +73,8 @@ function openModal(programKey) {
     }
 
     // Show the modal
-    modal.classList.add('is-open'); // Changed to 'is-open' class
+    modal.classList.add('is-open');
+    document.body.classList.add('modal-open');
 }
 
 // Function to close the program detail modal
@@ -88,7 +89,8 @@ function closeModal(event) {
     }
 
     modal.classList.remove('is-open');
-    
+    document.body.classList.remove('modal-open');
+
     // Optionally hide the active program panel when modal closes
     document.querySelectorAll('.modal-program-detail').forEach(panel => {
         panel.style.display = 'none';
@@ -137,6 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize the site language on load
     const savedLang = localStorage.getItem('language') || 'en';
     setLanguage(savedLang);
+    console.log("Saved Language:", savedLang)
 
     const hamburgerButton = document.getElementById('hamburger-button');
     const mobileMenuCloseButton = document.getElementById('mobile-menu-close');
@@ -155,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
             sidebarNav.classList.remove('is-open');
             hamburgerButton.classList.remove('is-hidden'); // Show hamburger when menu closes
         });
-    });
+    }
 
     // Handle clicks on program buttons to open modals
     document.querySelectorAll('button[data-program-key]').forEach(button => {
@@ -163,7 +166,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const programKey = event.currentTarget.dataset.programKey;
             openModal(programKey);
         });
+        console.log("added open modal handler to:", button);
     });
+
+    // Handle closing modal when close button is clicked
+    const programModal = document.getElementById('program-modal');
+    const modalCloseButton = programModal ? programModal.querySelector('.modal-close-button') : null;
+
+    if (modalCloseButton) {
+        modalCloseButton.addEventListener('click', closeModal);
+    }
+
+    // Handle closing modal when clicking outside the modal content
+    if (programModal) {
+        programModal.addEventListener('click', closeModal);
+    }
 
     // Close menu when a navigation link is clicked (for smooth scrolling)
     navLinks.forEach(link => {

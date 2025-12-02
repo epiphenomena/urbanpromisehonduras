@@ -1,5 +1,9 @@
 <style>
 /* Modal Styles */
+body.modal-open {
+    overflow: hidden;
+}
+
 .modal-overlay {
     position: fixed;
     inset: 0;
@@ -76,6 +80,12 @@
 
 .modal-close-button:hover {
     color: #4b5563; /* Gray-700 */
+}
+
+.close-icon {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
 }
 
 .modal-body {
@@ -221,7 +231,7 @@
 }
 </style>
 <!-- Generic Modal Structure (hidden by default) -->
-<div id="program-modal" class="modal-overlay" onclick="closeModal(event)">
+<div id="program-modal" class="modal-overlay">
     <!-- Modal Content Box -->
     <div class="modal-content" onclick="event.stopPropagation()">
 
@@ -231,7 +241,7 @@
                 <h3 id="modal-title" class="modal-title">
                     <span class="en">Program Details</span><span class="es">Detalles del Programa</span>
                 </h3>
-                <button onclick="closeModal()" class="modal-close-button">
+                <button class="modal-close-button">
                     <svg xmlns="http://www.w3.org/2000/svg" class="close-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
