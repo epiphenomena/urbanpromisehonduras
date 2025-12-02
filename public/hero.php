@@ -165,7 +165,7 @@
     }
 }
 </style>
-<section id="top" class="hero-section-split">
+<section id="hero" class="hero-section-split">
     <!-- Left Column: Quote and Story -->
     <div class="hero-content-left">
         <div class="hero-bg-image"></div>

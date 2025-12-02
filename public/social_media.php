@@ -1,6 +1,6 @@
 <style>
 /* Social Media Section */
-.social-media-grid {
+#social-media .social-media-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2.5rem;
@@ -9,42 +9,39 @@
 }
 
 @media (min-width: 1024px) {
-    .social-media-grid {
+    #social-media .social-media-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-.social-media-column {
+#social-media .social-media-column {
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
 }
 
-.social-media-column--stacked {
+#social-media .social-media-column--stacked {
     gap: 2.5rem;
 }
 
-.video-container--bordered {
+#social-media .video-container--bordered {
     border: 4px solid var(--color-accent-green);
     border-radius: 0.75rem;
     box-shadow: 0 10px 15px rgba(0,0,0,0.1);
     overflow: hidden;
 }
 
-.instagram-section {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+#social-media .instagram-section {
+    /* Styles are covered by .card, except for specific overrides below if any */
 }
 
-.instagram-grid {
+#social-media .instagram-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0.5rem;
 }
 
-.instagram-post {
+#social-media .instagram-post {
     display: block;
     aspect-ratio: 1 / 1;
     border-radius: 0.5rem;
@@ -53,70 +50,68 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-.instagram-post:hover {
+#social-media .instagram-post:hover {
     transform: scale(1.05);
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
 
-.instagram-post-image {
+#social-media .instagram-post-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.instagram-link {
+#social-media .instagram-link {
     text-align: center;
     font-size: 0.875rem;
     margin-top: 1rem;
 }
 
-.instagram-link a {
+#social-media .instagram-link a {
     font-weight: 600;
     color: #6b7280; /* Gray-500 */
 }
 
-.instagram-link a:hover {
+#social-media .instagram-link a:hover {
     color: var(--color-accent-blue);
 }
 
 
-.newsletter-section {
-    background-color: rgba(22, 78, 99, 0.05);
-    padding: 1.5rem;
-    border-radius: 0.75rem;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
+#social-media .newsletter-section {
+    background-color: rgba(22, 78, 99, 0.05); /* keep its specific background color */
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.06); /* keep its specific shadow */
 }
 
-.newsletter-form {
+#social-media .newsletter-form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.form-row {
+#social-media .form-row {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
 @media (min-width: 640px) {
-    .form-row {
+    #social-media .form-row {
         flex-direction: row;
     }
-    .form-row .form-group {
+    #social-media .form-row .form-group {
         flex: 1;
     }
 }
 
-.button-green {
+#social-media .button-green {
     background-color: var(--color-accent-green);
     color: white;
 }
-.button-green:hover {
+#social-media .button-green:hover {
     background-color: var(--color-primary);
 }
 
-.subscribe-message {
+#social-media .subscribe-message {
     text-align: center;
     font-size: 0.875rem;
     font-weight: 600;
@@ -151,7 +146,7 @@
             <!-- Column 2: Instagram Grid and Newsletter Form (Stacked) -->
             <div class="social-media-column social-media-column--stacked">
                 <!-- Row 1: Instagram Grid Placeholder -->
-                <div class="instagram-section">
+                <div class="instagram-section card">
                     <h3 class="subsection-title">
                         <span class="en">Latest from Instagram @urbanpromisehonduras</span><span class="es">Lo Más Reciente de Instagram @urbanpromisehonduras</span>
                     </h3>
@@ -182,7 +177,7 @@
                 </div>
 
                 <!-- Row 2: Newsletter Form -->
-                <div class="newsletter-section">
+                <div class="newsletter-section card">
                     <h3 class="subsection-title">
                         <span class="en">Subscribe to Our Newsletter</span><span class="es">Suscríbete a Nuestro Boletín</span>
                     </h3>

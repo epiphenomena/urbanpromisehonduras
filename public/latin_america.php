@@ -1,83 +1,76 @@
 <style>
 /* Latin America Section */
-.grid-container {
+#latin-america .grid-container {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    max-width: 75rem;
-    margin: 0 auto;
 }
 
 @media (min-width: 1024px) {
-    .grid-container {
+    #latin-america .grid-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-.grid-item {
-    background-color: white;
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+#latin-america .grid-item {
     overflow: hidden;
-    border-top: 4px solid var(--color-accent-blue); /* Default accent */
 }
 
-.grid-item.accent-green {
+#latin-america .grid-item.accent-green {
     border-top-color: var(--color-accent-green);
 }
-.grid-item.accent-blue {
+#latin-america .grid-item.accent-blue {
     border-top-color: var(--color-accent-blue);
 }
 
-.map-image-container {
+#latin-america .map-image-container {
     height: 16rem; /* 256px */
     overflow: hidden;
 }
 
-.map-image {
+#latin-america .map-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.map-caption {
+#latin-america .map-caption {
     padding: 1rem;
     text-align: center;
 }
 
-.map-text {
+#latin-america .map-text {
     font-weight: 600;
     color: var(--color-primary);
     margin: 0;
 }
 
-.video-card {
+#latin-america .video-card {
     background-color: black; /* For video background */
 }
 
-.campus-update-card {
+#latin-america .campus-update-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 1.5rem;
-    text-align: center;
 }
 
-.campus-text {
+#latin-america .campus-text {
     font-weight: 600;
     color: var(--color-primary);
     margin-bottom: 1rem;
 }
 
-.campus-images {
+#latin-america .campus-images {
     display: flex;
     gap: 0.5rem;
     justify-content: center;
     margin-bottom: 1.5rem;
 }
 
-.campus-image {
+#latin-america .campus-image {
     width: 3rem;
     height: 3rem;
     object-fit: cover;
@@ -85,14 +78,15 @@
     border: 1px solid var(--color-border);
 }
 </style>
-<section id="latin-america" class="content-section">
-    <div class="section-content-container">
+<section id="latin-america" class="section-split section-split--reversed">
+    <div class="section-split-content">
         <div class="section-header">
             <h2 class="section-title">
                 <span class="en">From Honduras to Latin America</span><span class="es">De Honduras a América Latina</span>
             </h2>
         </div>
-
+    </div>
+    <div class="section-split-content">
         <div class="grid-container">
             <!-- Grid Item 1 (Top-Left): Honduras Map Placeholder -->
             <div class="grid-item card map-card accent-green">

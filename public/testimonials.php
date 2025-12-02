@@ -1,57 +1,38 @@
 <style>
 /* Testimonials Section */
-.testimonials-section {
-    background-color: rgba(156, 214, 57, 0.1); /* Light green tint */
-    border-radius: 0.75rem;
-    padding: 2rem 1rem;
-}
+/* Removed .testimonials-section rules */
 
-@media (min-width: 768px) {
-    .testimonials-section {
-        padding: 3rem;
-    }
-}
-
-.testimonial-grid {
+#testimonials .testimonial-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    max-width: 75rem;
-    margin: 0 auto;
 }
 
 @media (min-width: 640px) {
-    .testimonial-grid {
+    #testimonials .testimonial-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 @media (min-width: 1024px) {
-    .testimonial-grid {
-        grid-template-columns: repeat(4, 1fr);
+    #testimonials .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr); /* Adjusted for 60% column width */
     }
 }
 
-.testimonial-card {
-    background-color: white;
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    padding: 1.5rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+
+#testimonials .testimonial-card {
     align-items: center;
-    border-top: 4px solid var(--color-accent-blue);
 }
 
-.testimonial-card.accent-green {
+#testimonials .testimonial-card.accent-green {
     border-top-color: var(--color-accent-green);
 }
-.testimonial-card.accent-primary {
+#testimonials .testimonial-card.accent-primary {
     border-top-color: var(--color-primary);
 }
 
 
-.author-image {
+#testimonials .author-image {
     width: 6rem;
     height: 6rem;
     border-radius: 50%;
@@ -61,30 +42,24 @@
     flex-shrink: 0;
 }
 
-.quote-text {
+#testimonials .quote-text {
     font-style: italic;
     color: #4b5563; /* Gray-600 */
     margin-bottom: 1rem;
     flex-grow: 1;
 }
 
-.author-name {
+#testimonials .author-name {
     font-weight: 600;
     color: rgba(22, 78, 99, 0.7);
     font-size: 0.875rem;
 }
 </style>
-<section class="content-section testimonials-section">
-    <div class="section-content-container">
-        <div class="section-header">
-            <h2 class="section-title">
-                <span class="en">Voices from Our Global Community</span><span class="es">Voces de Nuestra Comunidad Global</span>
-            </h2>
-        </div>
-
+<section id="testimonials" class="section-split">
+    <div class="section-split-content">
         <div class="testimonial-grid">
             <!-- Testimonial 1: Elian (Colombia) -->
-            <div class="testimonial-card">
+            <div class="testimonial-card card">
                 <img src="https://placehold.co/150x150/51CEEA/FFFFFF?text=Child+from+Colombia" alt="Child Elian from Villa de Héroes" class="author-image">
                 <blockquote class="quote-text">
                     <span class="en">“(I hope that)... Villa de Héroes never ends. In Jesus’ name we pray, Amen."</span><span class="es">“(Espero que)... Villa de Héroes nunca termine. En el nombre de Jesús oramos, Amén."</span>
@@ -95,7 +70,7 @@
             </div>
 
             <!-- Testimonial 2: Soledad (México) -->
-            <div class="testimonial-card accent-green">
+            <div class="testimonial-card card accent-green">
                 <img src="https://placehold.co/150x150/9cd639/164E63?text=Girl+from+Mexico" alt="Girl Soledad from Hay yipic ach’ix queremetic" class="author-image">
                 <blockquote class="quote-text">
                     <span class="en">"I feel safe, heard, and free to express myself without judgment. Even though we are girls, we can do it too."</span><span class="es">"Me siento segura, escuchada y libre de expresarme sin ser juzgada. Aunque seamos niñas, nosotras también podemos hacerlo."</span>
@@ -106,7 +81,7 @@
             </div>
 
             <!-- Testimonial 3: Carlos (Honduras - New Quote) -->
-            <div class="testimonial-card accent-primary">
+            <div class="testimonial-card card accent-primary">
                 <img src="https://placehold.co/150x150/164E63/51CEEA?text=Child+from+Honduras" alt="Child Carlos from AfterSchool Program" class="author-image">
                 <blockquote class="quote-text">
                     <span class="en">"My tutors teach me that I am capable of anything. I used to be afraid of math, but now it's my favorite subject!"</span><span class="es">"Mis tutores me enseñan que soy capaz de cualquier cosa. Antes le temía a las matemáticas, ¡pero ahora es mi materia favorita!"</span>
@@ -117,7 +92,7 @@
             </div>
 
             <!-- Testimonial 4: Marisol (México - New Quote) -->
-            <div class="testimonial-card">
+            <div class="testimonial-card card">
                 <img src="https://placehold.co/150x150/51CEEA/164E63?text=Youth+Fellow+Mexico" alt="Youth Marisol from UPCEL Fellowship" class="author-image">
                 <blockquote class="quote-text">
                     <span class="en">"UPCEL showed me that ministry isn't just about preaching—it's about building tangible solutions. I'm taking this model back home."</span><span class="es">"UPCEL me mostró que el ministerio no es solo predicar, es construir soluciones tangibles. Me llevo este modelo a casa."</span>
@@ -126,6 +101,13 @@
                     <span class="en">Marisol, UPCEL Fellow, Oaxaca, México</span><span class="es">Marisol, Becaria de UPCEL, Oaxaca, México</span>
                 </p>
             </div>
+        </div>
+    </div>
+    <div class="section-split-content">
+        <div class="section-header">
+            <h2 class="section-title">
+                <span class="en">Voices from Our Global Community</span><span class="es">Voces de Nuestra Comunidad Global</span>
+            </h2>
         </div>
     </div>
 </section>

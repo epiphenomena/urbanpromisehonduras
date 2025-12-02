@@ -20,7 +20,7 @@
     --color-text-dark: #374151;     /* Dark Gray */
     --color-text-light: #f9fafb;
     --color-background-light: #f9fafb; /* Light Gray Background */
-    --color-background-medium: #F3F4F6; /* Medium Gray Background */
+    --color-background-medium: #E5E7EB; /* Medium Gray Background */
     --color-border: #e5e7eb;       /* Border Color */
 
     /* Typography */
@@ -93,6 +93,7 @@ a:hover {
 /* Main Content Area */
 .main-content {
     width: 100%;
+    flex-grow: 1;
 }
 
 .section-content-container {
@@ -103,6 +104,17 @@ a:hover {
 
 /* 4. Component Styles
 -------------------------------------------------- */
+
+.card {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-top: 4px solid var(--color-accent-blue);
+}
 
 .button-large {
     padding: 1rem 1.5rem;
@@ -191,4 +203,43 @@ a:hover {
     .main-content {
         margin-left: var(--sidebar-width);
     }
+}
+
+/* Section Split Layout */
+.section-split {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 0;
+}
+
+.section-split-content {
+    padding: var(--content-padding);
+}
+
+@media (min-width: 768px) {
+    .section-split {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .section-split > .section-split-content:first-child {
+        width: 60%;
+    }
+
+    .section-split > .section-split-content:last-child {
+        width: 40%;
+    }
+
+    .section-split--reversed > .section-split-content:first-child {
+        width: 40%;
+    }
+
+    .section-split--reversed > .section-split-content:last-child {
+        width: 60%;
+    }
+}
+
+/* Alternating Section Backgrounds */
+main > section:nth-of-type(even) {
+    background-color: var(--color-background-medium);
 }

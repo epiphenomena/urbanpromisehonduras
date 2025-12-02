@@ -12,6 +12,10 @@
     transition: opacity 0.3s ease;
 }
 
+.modal-overlay.is-open {
+    display: flex;
+}
+
 .modal-content {
     background-color: white;
     border-radius: 0.75rem;

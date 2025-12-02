@@ -62,7 +62,7 @@ function openModal(programKey) {
     const modal = document.getElementById('program-modal');
     
     // Hide all program detail sections
-    document.querySelectorAll('.modal-content-panel').forEach(panel => {
+    document.querySelectorAll('.modal-program-detail').forEach(panel => { // Changed class name
         panel.style.display = 'none';
     });
 
@@ -73,24 +73,26 @@ function openModal(programKey) {
     }
 
     // Show the modal
-    modal.classList.remove('hidden'); // Assuming 'hidden' hides the modal via display: none;
-    modal.classList.add('flex'); // Assuming 'flex' shows the modal via display: flex;
+    modal.classList.add('is-open'); // Changed to 'is-open' class
 }
-
 
 // Function to close the program detail modal
 function closeModal(event) {
-    // Close only if the click is on the background or the close button
-    // Check if event is defined and target is not a child of modal-content, or if it's the close button itself
     const modal = document.getElementById('program-modal');
     if (!modal) return;
 
-    if (event && event.target !== modal && !event.target.closest('.modal-content')) {
-        return; // Clicked outside the modal content but not on the modal backdrop itself, nor on a close button
+    // If event is provided (i.e., not called directly from a button with onClick)
+    // and the click target is inside modal-content, do not close the modal
+    if (event && event.target.closest('.modal-content') && !event.target.closest('.modal-close-button')) {
+        return;
     }
 
-    modal.classList.add('hidden');
-    modal.classList.remove('flex');
+    modal.classList.remove('is-open');
+    
+    // Optionally hide the active program panel when modal closes
+    document.querySelectorAll('.modal-program-detail').forEach(panel => {
+        panel.style.display = 'none';
+    });
 }
 
 // Newsletter Subscription Mockup handler
@@ -153,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
             sidebarNav.classList.remove('is-open');
             hamburgerButton.classList.remove('is-hidden'); // Show hamburger when menu closes
         });
-    }
+    });
 
     // Close menu when a navigation link is clicked (for smooth scrolling)
     navLinks.forEach(link => {
