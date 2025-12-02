@@ -5,9 +5,10 @@
     flex-direction: column;
     /* Removed card-like styling here */
     padding: 0; /* Ensure no extra padding outside section-content-container */
-    color: var(--color-text-light)
+    color: var(--color-text-light);
+    padding-top: 4em;
 }
-
+s
 .hero-content-left {
     position: relative;
     color: var(--color-text-light);
@@ -149,10 +150,11 @@
     margin-top: 1.5rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
     .hero-section-split {
         flex-direction: row;
         min-height: 85vh;
+        padding-top: 0;
     }
     .hero-content-left {
         width: 60%;

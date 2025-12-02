@@ -187,4 +187,8 @@ a:hover {
     .mobile-header {
         display: none; /* Hide mobile header on desktop */
     }
+
+    .main-content {
+        margin-left: var(--sidebar-width);
+    }
 }
