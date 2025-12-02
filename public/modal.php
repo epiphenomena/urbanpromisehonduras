@@ -119,7 +119,7 @@ body.modal-open {
     gap: 2rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
     .program-detail-grid {
         grid-template-columns: 2fr 1fr;
     }
@@ -155,7 +155,7 @@ body.modal-open {
     gap: 1rem;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
     .metrics-grid {
         grid-template-columns: repeat(4, 1fr);
     }

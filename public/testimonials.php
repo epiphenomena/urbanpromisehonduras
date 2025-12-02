@@ -8,12 +8,12 @@
     gap: 1.5rem;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
     #testimonials .testimonial-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
     #testimonials .testimonial-grid {
         grid-template-columns: repeat(2, 1fr); /* Adjusted for 60% column width */
     }

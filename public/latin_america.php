@@ -6,7 +6,7 @@
     gap: 1.5rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
     #latin-america .grid-container {
         grid-template-columns: repeat(2, 1fr);
     }

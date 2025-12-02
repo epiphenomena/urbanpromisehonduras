@@ -79,7 +79,7 @@
     gap: 1rem;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
     #social-media .form-row {
         flex-direction: row;
     }
