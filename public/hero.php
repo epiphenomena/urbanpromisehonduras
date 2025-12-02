@@ -8,7 +8,7 @@
     color: var(--color-text-light);
     padding-top: 4em;
 }
-s
+
 .hero-content-left {
     position: relative;
     color: var(--color-text-light);
