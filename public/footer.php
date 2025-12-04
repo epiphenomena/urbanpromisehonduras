@@ -46,3 +46,9 @@ footer {
         <p>&copy; <?php echo date("Y"); ?> UrbanPromise Honduras, LLC</p>
     </div>
 </footer>
+
+<!-- Close html -->
+    </div> <!-- Close .site-container -->
+    <script type="module"><?php echo file_get_contents(__DIR__ . '/main.js'); ?></script>
+</body>
+</html>

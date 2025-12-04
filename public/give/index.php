@@ -1,4 +1,3 @@
-<?php include '../layout_top.php'; ?>
 <?php include '../header.php'; ?>
 <?php include '../menu.php'; ?>
 
@@ -119,4 +118,3 @@
 
 
 <?php include '../footer.php'; ?>
-<?php include '../layout_bottom.php'; ?>
