@@ -254,7 +254,7 @@ body.modal-open {
                 <!-- Youth Program Content -->
                 <div id="modal-content-youth" class="modal-program-detail">
                     <div class="program-image-container">
-                        <img src="https://placehold.co/1000x400/164E63/FFFFFF?text=Youth+Leadership+Program" alt="Youth Program Visual" class="program-image">
+                        <img src="media/youth-modal.jpg"" alt="Youth Program Visual" class="program-image">
                     </div>
                     <div class="program-detail-grid">
                         <div class="program-info">
@@ -286,7 +286,7 @@ body.modal-open {
                 <!-- AfterSchool Program Content -->
                 <div id="modal-content-afterschool" class="modal-program-detail">
                     <div class="program-image-container">
-                        <img src="https://placehold.co/1000x400/51CEEA/164E63?text=AfterSchool+Academics" alt="AfterSchool Program Visual" class="program-image">
+                        <img src="media/afterschool.jpg" alt="AfterSchool Program Visual" class="program-image">
                     </div>
                     <div class="program-detail-grid">
                         <div class="program-info">
@@ -318,7 +318,7 @@ body.modal-open {
                 <!-- UrbanTrekkers Program Content -->
                 <div id="modal-content-urbantrekkers" class="modal-program-detail">
                     <div class="program-image-container">
-                        <img src="https://placehold.co/1000x400/9cd639/164E63?text=UrbanTrekkers+Field+Trip" alt="UrbanTrekkers Program Visual" class="program-image">
+                        <img src="media/urbantrekkers.jpg" alt="UrbanTrekkers Program Visual" class="program-image">
                     </div>
                     <div class="program-detail-grid">
                         <div class="program-info">
@@ -350,7 +350,7 @@ body.modal-open {
                 <!-- UPCEL Program Content -->
                 <div id="modal-content-upcel" class="modal-program-detail">
                     <div class="program-image-container">
-                        <img src="https://placehold.co/1000x400/164E63/9cd639?text=UPCEL+Fellows+Training" alt="UPCEL Program Visual" class="program-image">
+                        <img src="media/upcel.jpg" alt="UPCEL Program Visual" class="program-image">
                     </div>
                     <div class="program-detail-grid">
                         <div class="program-info">

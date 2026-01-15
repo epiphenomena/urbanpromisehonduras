@@ -1,152 +1,176 @@
 <style>
-/* Latin America Section */
-#latin-america .grid-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+/* ===== LATIN AMERICA TWO-COLUMN LAYOUT (FIXED CAMPUS IMAGES) ===== */
+#latin-america {
+    max-width: 1920px;
+    margin: 0 auto 4rem auto;
+    padding: 3rem;
+    background: rgba(22, 78, 99, 0.05);
+    border-radius: 1rem;
 }
 
-@media (min-width: 768px) {
-    #latin-america .grid-container {
+/* FORCE TWO COLUMNS */
+#latin-america .la-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+/* LEFT & RIGHT COLUMNS */
+#latin-america .la-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* PANELS */
+#latin-america .panel {
+    background: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+    overflow: hidden;
+}
+
+#latin-america .panel-header {
+    padding: 1rem 1.25rem;
+    font-weight: 800;
+    text-align: center;
+    color: var(--color-primary);
+}
+
+/* MAP IMAGES */
+#latin-america .panel img.map-image {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+/* VIDEO */
+#latin-america .video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+}
+
+#latin-america .video-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* CAMPUS GRID */
+#latin-america .campus-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+}
+
+/* FIXED: NO CROPPING */
+#latin-america .campus-grid img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain; /* 👈 KEY FIX */
+    background: #f3f4f6;
+    border-radius: 0.75rem;
+    padding: 0.5rem;
+}
+
+/* BUTTON */
+#latin-america .campus-button {
+    display: inline-block;
+    padding: 1rem 2.25rem;
+    background: var(--color-primary);
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.1rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+#latin-america .campus-button:hover {
+    transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    #latin-america .la-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #latin-america .campus-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
-#latin-america .grid-item {
-    overflow: hidden;
-}
-
-#latin-america .grid-item.accent-green {
-    border-top-color: var(--color-accent-green);
-}
-#latin-america .grid-item.accent-blue {
-    border-top-color: var(--color-accent-blue);
-}
-
-#latin-america .map-image-container {
-    height: 16rem; /* 256px */
-    overflow: hidden;
-}
-
-#latin-america .map-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-#latin-america .map-caption {
-    padding: 1rem;
-    text-align: center;
-}
-
-#latin-america .map-text {
-    font-weight: 600;
-    color: var(--color-primary);
-    margin: 0;
-}
-
-#latin-america .video-card {
-    background-color: black; /* For video background */
-}
-
-#latin-america .campus-update-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1.5rem;
-}
-
-#latin-america .campus-text {
-    font-weight: 600;
-    color: var(--color-primary);
-    margin-bottom: 1rem;
-}
-
-#latin-america .campus-images {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-}
-
-#latin-america .campus-image {
-    width: 3rem;
-    height: 3rem;
-    object-fit: cover;
-    border-radius: 0.5rem;
-    border: 1px solid var(--color-border);
-}
 </style>
-<section id="latin-america" class="section-split section-split--reversed">
-    <div class="section-split-content">
-        <div class="section-header">
-            <h2 class="section-title">
-                <span class="en">From Honduras to Latin America</span><span class="es">De Honduras a América Latina</span>
-            </h2>
-        </div>
-    </div>
-    <div class="section-split-content">
-        <div class="grid-container">
-            <!-- Grid Item 1 (Top-Left): Honduras Map Placeholder -->
-            <div class="grid-item card map-card accent-green">
-                <div class="map-image-container">
-                    <img src="https://placehold.co/600x400/9cd639/164E63?text=Map+of+Honduras%0A+%28Pin+on+Cop%C3%A1n+Ruinas%29"
-                         alt="Map of Honduras with a pin on Copán Ruinas"
-                         class="map-image">
+
+<section id="latin-america">
+
+    <h2 style="text-align:center;font-size:2.5rem;font-weight:900;margin-bottom:3rem;color:var(--color-primary);">
+        From Honduras to Latin America
+    </h2>
+
+    <!-- TWO MAIN COLUMNS -->
+    <div class="la-grid">
+
+        <!-- LEFT COLUMN -->
+        <div class="la-column">
+
+            <div class="panel">
+                <div class="panel-header">
+                    Where we are located – Copán Ruinas, Copán, Honduras
                 </div>
-                <div class="map-caption">
-                    <p class="map-text">
-                        <span class="en">Where we are located - Copán Ruinas, Copán, Honduras</span><span class="es">Nuestra ubicación - Copán Ruinas, Copán, Honduras</span>
-                    </p>
-                </div>
+                <img src="media/Honduras.jpg" alt="Honduras Map" class="map-image">
             </div>
 
-            <!-- Grid Item 2 (Top-Right): YouTube Video Embed -->
-            <div class="grid-item card video-card accent-blue">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/OK68If0WFMU"
-                            title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
+            <div class="panel">
+                <div class="panel-header">
+                    Regional Expansion: Mexico, Honduras, and Colombia (Bogotá, Cali, Villa Gorgona)
+                </div>
+                <img src="media/UPLAM map.jpg" alt="UPLAM Regional Map" class="map-image">
+            </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="la-column">
+
+            <div class="panel" style="background:#000;">
+                <div class="video-wrapper">
+                    <iframe
+                        src="https://www.youtube.com/embed/OK68If0WFMU"
+                        title="UPLAM Video"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
                     </iframe>
                 </div>
             </div>
 
-            <!-- Grid Item 3 (Bottom-Left): Latin America Map Placeholder -->
-            <div class="grid-item card map-card accent-green">
-                <div class="map-image-container">
-                    <img src="https://placehold.co/600x400/51CEEA/164E63?text=Map+of+Latin+America%0A+%28MX,+HND,+COL+Partners%29"
-                         alt="Map of Latin America showing partner locations"
-                         class="map-image">
-                </div>
-                <div class="map-caption">
-                    <p class="map-text">
-                        <span class="en">Regional Expansion: Mexico, Honduras, and Colombia (Bogotá, Cali, Villa Gorgona)</span><span class="es">Expansión Regional: México, Honduras y Colombia (Bogotá, Cali, Villa Gorgona)</span>
-                    </p>
-                </div>
-            </div>
+            <div class="panel" style="padding:2rem;text-align:center;">
+                <h3 style="font-size:1.5rem;font-weight:900;margin-bottom:1.25rem;color:var(--color-primary);">
+                    Our UPLAM Campus
+                </h3>
 
-            <!-- Grid Item 4 (Bottom-Right): Button and Campus Update -->
-            <div class="grid-item card campus-update-card accent-blue">
-                <p class="campus-text">
-                    <span class="en">our UPLAM Campus</span><span class="es">nuestro Campus UPLAM</span>
-                </p>
-
-                <div class="campus-images">
-                    <img src="https://placehold.co/50x50/F3F4F6/9CA3AF?text=1" alt="Campus Photo 1" class="campus-image">
-                    <img src="https://placehold.co/50x50/F3F4F6/9CA3AF?text=2" alt="Campus Photo 2" class="campus-image">
-                    <img src="https://placehold.co/50x50/F3F4F6/9CA3AF?text=3" alt="Campus Photo 3" class="campus-image">
-                    <img src="https://placehold.co/50x50/F3F4F6/9CA3AF?text=4" alt="Campus Photo 4" class="campus-image">
+                <div class="campus-grid">
+                    <img src="media/CAMPUS 1.jpg" alt="Campus 1">
+                    <img src="media/CAMPUS 2.jpg" alt="Campus 2">
+                    <img src="media/CAMPUS 3.jpg" alt="Campus 3">
+                    <img src="media/CAMPUS 4.jpg" alt="Campus 4">
                 </div>
 
-                <a href="https://padlet.com/david3067/uplam-campus-2025-update-xllu05fx7xijexg7"
-                   target="_blank"
-                   class="button button-primary button-large">
-                    <span class="en">View Campus Update</span><span class="es">Ver Actualización del Campus</span>
+                <a
+                    href="https://padlet.com/david3067/uplam-campus-2025-update-xllu05fx7xijexg7"
+                    target="_blank"
+                    class="campus-button">
+                    View Campus Update
                 </a>
             </div>
+
         </div>
+
     </div>
 </section>

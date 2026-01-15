@@ -1,64 +1,80 @@
 <style>
-/* Hero Section Specific Styles */
+/* =========================
+   HERO SECTION
+========================= */
+
 #hero.section-split {
+    position: relative;
     color: var(--color-text-light);
-    padding-top: 4em; /* For mobile spacing beneath fixed header */
-    overflow: hidden; /* To contain absolutely positioned children */
+    min-height: 600px;
+    overflow: hidden;
+
+    /* ❌ quitamos padding vertical */
+    padding-top: 10px;
 }
 
 @media (min-width: 768px) {
     #hero.section-split {
-        padding-top: 0; /* No padding needed on desktop, content is full height */
+        padding-top: 0;
+        min-height: auto;
     }
 }
 
+/* LEFT COLUMN */
 #hero .hero-content-left {
     position: relative;
-    padding: 2rem; /* Mobile padding */
+    padding: 3rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    min-height: 50vh; /* Minimum height for mobile visual */
+    justify-content: center; /* 👈 centra verticalmente */
+    height: 100%;
 }
 
 @media (min-width: 768px) {
     #hero .hero-content-left {
-        padding: 3rem; /* Desktop padding */
+        padding: 3rem;
     }
 }
 
+/* BACKGROUND IMAGE */
 #hero .hero-bg-image {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://placehold.co/1200x800/164E63/FFFFFF?text=Inspiring+Background+Image');
+    inset: 0;
+    background-image: url("media/hero.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: center 55%; /* BAJA el foco */
     z-index: 1;
 }
 
+/* OVERLAY */
 #hero .hero-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #164E63;
-    opacity: 0.6;
+    inset: 0;
+    background: rgba(235, 250, 255, 0.3); /* azul suave */
     z-index: 2;
 }
 
+/* STORY CONTENT */
 #hero .hero-story-content {
     position: relative;
     z-index: 3;
-    background: rgba(0,0,0,0.6);
+    max-width: 50%;
+    margin-right: auto;          /* lo tira a la izquierda */
+    background: rgba(0, 0, 0, 0.6);
     padding: 1.5rem;
     border-radius: 0.5rem;
     backdrop-filter: blur(4px);
+    text-align: left;
 }
 
+/* Mobile: texto full width */
+@media (max-width: 768px) {
+    #hero .hero-story-content {
+        max-width: 100%;
+    }
+}
+
+/* TEXT STYLES */
 #hero .quote {
     font-size: 1.5rem;
     font-style: italic;
@@ -92,10 +108,12 @@
     color: var(--color-accent-green);
     font-weight: 700;
 }
+
 #hero .read-more-link:hover {
     color: var(--color-accent-blue);
 }
 
+/* RIGHT COLUMN */
 #hero .hero-content-right {
     display: flex;
     align-items: center;
@@ -103,7 +121,6 @@
     padding: 2.5rem;
     background-color: rgba(249, 250, 251, 0.8);
 }
-
 
 </style>
 <section id="hero" class="section-split">
@@ -114,7 +131,7 @@
         <div class="section-content-container">
             <div class="hero-story-content">
                 <blockquote class="quote">
-                    <span class="en">“UPH saved my life.” Gerson Vásquez</span><span class="es">“UPH salvó mi vida.” Gerson Vásquez</span>
+                    <span class="en">“UPH saved my life, AGAIN.” Gerson Vásquez</span><span class="es">“UPH salvó mi vida.” Gerson Vásquez</span>
                 </blockquote>
                 <div class="story-preview">
                     <p class="story-callout">
@@ -132,29 +149,15 @@
     </div>
 
     <!-- Right Column: Simple Giving Form -->
-    <div class="section-split-content hero-content-right">
-        <div class="section-content-container">
-            <div class="call-to-action-container">
-                <h3 class="form-title">
-                    <span class="en">Support our work</span><span class="es">Apoya nuestro trabajo</span>
-                </h3>
-                <div class="button-group">
-                    <a href="#" class="button button-primary button-large">
-                        <span class="en">Give Today</span><span class="es">Donar Hoy</span>
-                    </a>
-                    <a href="#" class="button button-secondary button-large">
-                        <span class="en">Give Monthly (Join the Circus)</span><span class="es">Donar Mensual (Únete al Circo)</span>
-                    </a>
-                    <a href="#" class="button button-primary button-large">
-                        <span class="en">Give through PayPal</span><span class="es">Donar con PayPal</span>
-                    </a>
-                </div>
-                <p class="form-footer-note">
-                    <a href="#">
-                        <span class="en">Additional giving information and options</span><span class="es">Información y opciones adicionales para donar</span>
-                    </a>
-                </p>
-            </div>
-        </div>
-    </div>
+    <div class="donation-embed">
+    <div class="kindful-embed-wrapper" id="kindful-donate-form-3a10f917-c46e-40e5-82b0-91fd7cc85973"></div>
+</div>
+
+<script
+    src="https://urbanpromise.kindful.com/embeds/3a10f917-c46e-40e5-82b0-91fd7cc85973/init.js?type=form"
+    data-embed-id="3a10f917-c46e-40e5-82b0-91fd7cc85973"
+    data-lookup-type="jquery-selector"
+    data-lookup-value="#kindful-donate-form-3a10f917-c46e-40e5-82b0-91fd7cc85973">
+</script>
+
 </section>

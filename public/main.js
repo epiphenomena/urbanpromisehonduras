@@ -22,6 +22,7 @@ const translations = {
     }
 };
 
+
 const langEnBtn = document.getElementById('lang-en');
 const langEsBtn = document.getElementById('lang-es');
 const langToggleButtons = [langEnBtn, langEsBtn];
@@ -195,6 +196,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 sidebarNav.classList.remove('is-open');
                 hamburgerButton.classList.remove('is-hidden'); // Show hamburger when menu closes
             }
+
         });
+   
     });
+    document.addEventListener('DOMContentLoaded', () => {
 });
+// Smooth scroll for sidebar links to homepage sections
+document.querySelectorAll('a[href^="/#"]').forEach(link => {
+    link.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href').substring(2); // remove "/#"
+        const target = document.getElementById(targetId);
+
+        if (target) {
+            e.preventDefault();
+
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+
+            // Close mobile menu
+            const sidebarNav = document.getElementById('side-menu');
+            const hamburgerButton = document.getElementById('hamburger-button');
+
+            if (sidebarNav?.classList.contains('is-open')) {
+                sidebarNav.classList.remove('is-open');
+                hamburgerButton?.classList.remove('is-hidden');
+            }
+        }
+    });
+    });
+
+});
+
