@@ -17,6 +17,7 @@
     #hero.section-split {
         padding-top: 0;
         min-height: auto;
+        align-items: stretch;
     }
 }
 
@@ -27,7 +28,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center; /* 👈 centra verticalmente */
-    height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -149,7 +149,7 @@
     </div>
 
     <!-- Right Column: Simple Giving Form -->
-    <div class="donation-embed">
+    <div class="section-split-content hero-content-right donation-embed">
     <div class="kindful-embed-wrapper" id="kindful-donate-form-3a10f917-c46e-40e5-82b0-91fd7cc85973"></div>
 </div>
 
